@@ -1,8 +1,8 @@
 # skfold-kge
 
-**Validación cruzada k-fold estratificada** para grafos de conocimiento (KGE) y
-clasificación de texto / detección de noticias falsas — con **verificación de
-integridad** y un **dashboard HTML** autocontenido.
+Librería de validación cruzada k-fold estratificada para grafos de conocimiento
+(KGE) y para clasificación de texto, con verificación de integridad de los
+folds y un reporte HTML autocontenido.
 
 [![python](https://img.shields.io/badge/python-%E2%89%A53.9-blue)](https://www.python.org/)
 [![tests](https://img.shields.io/badge/tests-pytest-green)](#testing)
@@ -10,61 +10,64 @@ integridad** y un **dashboard HTML** autocontenido.
 
 ---
 
-## ¿Qué hace?
+## Descripción
 
-Particiona un dataset en `k` folds **estratificados por una columna categórica**,
-de forma que cada fold conserva la distribución del conjunto original:
+La librería particiona un dataset en `k` folds estratificados por una columna
+categórica, de modo que cada fold conserva la distribución del conjunto
+original respecto a esa columna.
 
 | Caso de uso | `stratify_by` | Resultado |
 |---|---|---|
-| **Grafos de conocimiento (KGE)** | columna de **relación** | Cada fold mantiene la proporción de cada tipo de relación |
-| **Noticias falsas / clasificación** | columna de **clase** (`label`) | Cada fold mantiene la proporción de clases |
+| Grafos de conocimiento (KGE) | columna de relación | cada fold mantiene la proporción de cada tipo de relación |
+| Clasificación de texto (p. ej. noticias falsas) | columna de clase (`label`) | cada fold mantiene la proporción de clases |
 
-Además:
+Funciones principales:
 
-- ✔ **Verifica** que no haya solapamiento entre folds y que la cobertura sea total.
-- 📊 **Sustenta la cantidad de datos** con desviación estándar (Std) y coeficiente
-  de variación (CV) por estrato.
-- 📄 Genera reportes de integridad en **texto, JSON y HTML** (dashboard estático).
-- 📈 Evalúa modelos KGE (TransE/ComplEx/RotatE) y clasificadores de texto con
-  **F1 Score**, MRR y Hits@K (extras opcionales).
+- Verificación de que no haya solapamiento entre folds y de que la cobertura sea total.
+- Cálculo de desviación estándar (Std) y coeficiente de variación (CV) por
+  estrato, como sustento cuantitativo de la cantidad de datos asignada a cada
+  fold.
+- Reportes de integridad en texto, JSON y HTML.
+- Evaluación opcional de modelos KGE (TransE, ComplEx, RotatE) y de
+  clasificadores de texto, con F1 Score, MRR y Hits@K.
 
 ---
 
 ## Índice
 
 1. [Instalación](#instalación)
-2. [Tutorial paso a paso](#tutorial-paso-a-paso)
-3. [Parámetros de `StratifiedPartitioner`](#parámetros-de-stratifiedpartitioner)
-4. [Cómo leer el reporte de integridad](#cómo-leer-el-reporte-de-integridad)
-5. [Generar el entregable completo (CLI)](#generar-el-entregable-completo)
-6. [Referencia completa de la CLI](#referencia-completa-de-la-cli)
+2. [Uso básico](#uso-básico)
+3. [Parámetros de StratifiedPartitioner](#parámetros-de-stratifiedpartitioner)
+4. [Estructura del reporte de integridad](#estructura-del-reporte-de-integridad)
+5. [Generación del entregable](#generación-del-entregable)
+6. [Referencia de la CLI](#referencia-de-la-cli)
 7. [Metodología](#metodología)
-8. [Detección de noticias falsas](#detección-de-noticias-falsas)
+8. [Clasificación de texto / noticias falsas](#clasificación-de-texto--noticias-falsas)
 9. [Evaluación de modelos KGE](#evaluación-de-modelos-kge)
 10. [API](#api)
-11. [Preguntas frecuentes / Troubleshooting](#preguntas-frecuentes--troubleshooting)
+11. [Resolución de problemas](#resolución-de-problemas)
 12. [Testing](#testing)
+13. [Reproducibilidad](#reproducibilidad)
 
 ---
 
 ## Instalación
 
 ```bash
-# Núcleo (particionar + verificar + reportar + exportar): pandas, numpy, openpyxl
+# Núcleo: particionar, verificar, reportar, exportar. Dependencias: pandas, numpy, openpyxl.
 pip install -e .
 
 # Extras opcionales
 pip install -e ".[kge]"    # evaluación KGE: pykeen + torch (~2 GB)
 pip install -e ".[text]"   # clasificación de texto: scikit-learn
 pip install -e ".[liar]"   # loader del dataset LIAR (HuggingFace datasets)
-pip install -e ".[all]"    # todo
+pip install -e ".[all]"    # todos los extras
 pip install -e ".[dev]"    # pytest
 ```
 
-> Distribución: `skfold-kge` · Import: `import skfold_kge`
+Nombre de distribución: `skfold-kge`. Nombre de import: `skfold_kge`.
 
-Verifica la instalación:
+Verificación de la instalación:
 
 ```bash
 python -c "import skfold_kge; print(skfold_kge.__version__)"
@@ -73,167 +76,123 @@ skfold-kge --version
 
 ---
 
-## Tutorial paso a paso
+## Uso básico
 
-Esta sección explica, de cero, cómo particionar y verificar **tu propio dataset**
-(no solo el GoT de ejemplo). Cada paso explica el *por qué*, no solo el *cómo*.
-
-### Paso 1 — Prepara tu dataset
-
-Necesitas un `DataFrame` de pandas con **una columna que sirva de estrato**:
-el valor por el que quieres que la proporción se mantenga igual en todos los
-folds. Dos casos típicos:
-
-- **Grafo de conocimiento**: 3 columnas `(sujeto, relación, objeto)` → estrato
-  = columna de relación.
-- **Clasificación** (p. ej. noticias falsas): columna de texto + columna de
-  clase → estrato = columna de clase.
+El dataset de entrada debe ser un `DataFrame` de pandas con una columna que
+sirva de estrato: el valor que debe mantener su proporción en todos los
+folds. En un grafo de conocimiento, normalmente es la columna de relación
+de la tripleta `(sujeto, relación, objeto)`. En un dataset de clasificación,
+es la columna de clase.
 
 ```python
 import pandas as pd
-df = pd.read_csv("mi_dataset.csv", sep=";")   # o sep="," según tu archivo
-print(df.head())
-print(df.shape)
-```
-
-> **Importante:** si tu CSV usa coma como separador, no pases `sep=";"`. Si no
-> sabes el separador, abre el archivo con un editor de texto y mira la primera línea.
-
-### Paso 2 — Elige `k` y la columna de estrato
-
-```python
 from skfold_kge import StratifiedPartitioner
 
-part = StratifiedPartitioner(
-    k=5,                     # número de folds (5 es el estándar: 80% train / 20% test)
-    stratify_by="Column2",   # nombre EXACTO de tu columna de clase/relación
-    seed=42,                 # cualquier entero fijo => resultados reproducibles
-)
-```
+df = pd.read_csv("mi_dataset.csv", sep=";")
 
-¿Cómo elegir `k`? Más folds = más datos de entrenamiento por iteración pero
-folds de prueba más pequeños (más varianza al medir). `k=5` o `k=10` son los
-valores estándar en la literatura; usa `k` más grande solo si tu dataset es
-pequeño y necesitas exprimir cada ejemplo.
-
-### Paso 3 — Particiona
-
-```python
+part = StratifiedPartitioner(k=5, stratify_by="Column2", seed=42)
 folds = part.fit_transform(df)
-print(folds.sizes())   # p. ej. [640, 639, 635, 632, 630]
+
+print(folds.sizes())   # ej.: [640, 639, 635, 632, 630]
 ```
 
-`fit_transform` hace, en este orden: (1) elimina duplicados, (2) agrupa filas
-por el valor del estrato, (3) baraja cada grupo con la semilla dada, (4)
-reparte Round-Robin entre los `k` folds. El resultado es un objeto `FoldSet`
-que **no modifica tu `DataFrame` original**.
+`fit_transform` ejecuta, en orden: eliminación de duplicados, agrupación de
+filas por valor del estrato, barajado de cada grupo con la semilla dada, y
+reparto Round-Robin entre los `k` folds. El `DataFrame` original no se
+modifica.
 
-### Paso 4 — Verifica la integridad (obligatorio antes de usar los folds)
+Antes de usar los folds para entrenar, se debe verificar la integridad de la
+partición:
 
 ```python
 report = folds.verify()
-print(report.passed)        # True / False — ¿la partición es válida?
-print(report.to_text())     # reporte humano completo
+assert report.passed   # False si hay solapamiento o cobertura incompleta
+print(report.to_text())
 ```
 
-`report.passed` es `False` si hay solapamiento entre folds o si falta
-cobertura (alguna fila no quedó en ningún fold). Si es `False`, **no
-continúes** con el entrenamiento — revisa tu dataset (duplicados raros,
-columna de estrato mal elegida, etc.).
-
-### Paso 5 — Itera entrenamiento/prueba
+Iteración sobre los pares entrenamiento/prueba:
 
 ```python
 for i, train, test in folds.iter_train_test():
     print(f"Fold {i + 1}: train={len(train)} filas, test={len(test)} filas")
-    # entrena tu modelo con `train`, evalúa con `test`
 ```
 
-En cada iteración, `train` son los `k-1` folds restantes concatenados y `test`
-es el fold `i`. Así obtienes `k` corridas de entrenamiento/evaluación, una por
-fold.
+En cada iteración, `train` corresponde a los `k-1` folds restantes
+concatenados y `test` al fold `i`. Esto produce `k` corridas de
+entrenamiento/evaluación, una por fold.
 
-### Paso 6 — Exporta el resultado (el "entregable")
+Exportación de resultados:
 
 ```python
 import os
 os.makedirs("outputs", exist_ok=True)
 
-folds.to_csv_dir("outputs/folds")                       # un CSV por fold
-folds.to_excel("outputs/folds_partitions.xlsx")          # un Excel, una hoja por fold
-report.to_text()                                         # string en memoria
-report.to_json("outputs/integrity_report.json")          # para integraciones/CI
-report.to_html("outputs/integrity_report.html")          # ábrelo en el navegador
+folds.to_csv_dir("outputs/folds")               # un CSV por fold
+folds.to_excel("outputs/folds_partitions.xlsx") # un Excel, una hoja por fold
+report.to_json("outputs/integrity_report.json")
+report.to_html("outputs/integrity_report.html") # reporte HTML
 ```
 
-Abre `outputs/integrity_report.html` con doble clic (o `start outputs/integrity_report.html`
-en Windows / `open ...` en Mac / `xdg-open ...` en Linux) para ver el dashboard.
-
-> Todo este flujo (pasos 1–6) ya está automatizado en
-> [`examples/quickstart.py`](examples/quickstart.py) — cópialo y adáptalo a tu
-> dataset en vez de escribir el código desde cero.
+El flujo completo está implementado en [`examples/quickstart.py`](examples/quickstart.py).
 
 ---
 
-## Parámetros de `StratifiedPartitioner`
+## Parámetros de StratifiedPartitioner
 
-| Parámetro | Tipo | Por defecto | Qué hace |
+| Parámetro | Tipo | Valor por defecto | Descripción |
 |---|---|---|---|
-| `k` | `int` | — (requerido) | Número de folds. Mínimo 2. |
-| `stratify_by` | `str` | — (requerido) | Nombre de la columna usada como estrato. |
-| `seed` | `int` | `42` | Semilla del barajado. Misma semilla + mismos datos = misma partición siempre. |
-| `dedup` | `bool` | `True` | Elimina filas 100% duplicadas antes de particionar. Pon `False` solo si las repeticiones son intencionales (p. ej. ya son un peso/frecuencia). |
-| `dropna_stratum` | `bool` | `False` | Si `True`, descarta filas cuyo estrato es `NaN`. Si `False` (recomendado), las agrupa en un estrato propio y las **reporta como aviso**, para que no pasen inadvertidas. |
-| `triple_columns` | `tuple[str, str, str]` o `None` | `None` (autodetecta si hay 3 columnas) | Indica explícitamente `(sujeto, relación, objeto)` para habilitar el reporte de solapamiento de entidades. |
+| `k` | `int` | requerido | Número de folds. Mínimo 2. Con `k=5`, la proporción entrenamiento/prueba es 80/20. |
+| `stratify_by` | `str` | requerido | Nombre de la columna usada como estrato. |
+| `seed` | `int` | `42` | Semilla del barajado. La misma semilla sobre los mismos datos produce la misma partición. |
+| `dedup` | `bool` | `True` | Elimina filas duplicadas antes de particionar. Desactivar solo si la repetición de filas es intencional (por ejemplo, representa un peso o frecuencia). |
+| `dropna_stratum` | `bool` | `False` | Si es `True`, descarta filas cuyo estrato es `NaN`. Si es `False`, las agrupa en un estrato propio y las incluye como aviso en el reporte. |
+| `triple_columns` | `tuple[str, str, str]` o `None` | `None` (se infiere si hay 3 columnas) | Define explícitamente `(sujeto, relación, objeto)` para habilitar el reporte de solapamiento de entidades. |
 
 ---
 
-## Cómo leer el reporte de integridad
+## Estructura del reporte de integridad
 
-El objeto `IntegrityReport` (`folds.verify()`) trae estos campos clave —
-disponibles igual en texto, JSON y HTML:
+El objeto `IntegrityReport`, devuelto por `folds.verify()`, expone los mismos
+datos en texto, JSON y HTML:
 
-| Campo / sección | Significa |
+| Campo o sección | Contenido |
 |---|---|
-| **`passed` / badge verde "Sin solapamiento"** | Ninguna fila cayó en dos folds a la vez. Si esto falla, hay un bug grave de particionamiento. |
-| **`overlap_count`** | Número de filas duplicadas entre folds. Debe ser `0`. |
-| **Cobertura total** | Cada fila del dataset limpio aparece en exactamente un fold (ni se perdió ninguna, ni se repitió). |
-| **Tabla "Distribución por estrato"** | Para cada valor de estrato (relación o clase): cuántos casos hay en cada fold, su media, su **Std** (desviación estándar) y su **CV** (coeficiente de variación = Std/Media en %). |
-| **CV bajo (verde, <5%)** | El estrato está repartido casi exactamente igual en todos los folds — la cantidad de datos por fold para esa clase/relación es confiable. |
-| **CV alto (rojo, >15%)** | Ese estrato tiene pocos ejemplos o se reparte de forma desigual; con pocos datos, considera bajar `k` o agregar más ejemplos de esa clase. |
-| **Avisos (`warnings`)** | Texto explicando estratos con `NaN`, estratos con menos ejemplos que folds (`< k`), o folds desbalanceados (CV global > 5%). |
-| **Sección "Entidades" (solo grafos)** | Cuántas entidades únicas (nodos) hay por fold y cuántas se repiten entre cada par de folds. Esto es **esperado e informativo** en grafos de conocimiento (las entidades sí se repiten; las tripletas no).|
+| `passed` | `True` si no hay solapamiento entre folds y la cobertura es total. |
+| `overlap_count` | Número de filas que aparecen en más de un fold. Debe ser 0. |
+| Cobertura total | Cada fila del dataset limpio aparece en exactamente un fold. |
+| Distribución por estrato | Recuento por fold de cada valor de estrato, con media, desviación estándar (Std) y coeficiente de variación (CV). |
+| CV por estrato | Menor a 5%: distribución equilibrada entre folds. Entre 5% y 15%: aceptable, revisar estratos pequeños. Mayor a 15%: desbalance; considerar reducir `k` o aumentar los datos de ese estrato. |
+| `warnings` | Lista de avisos: estratos con valores `NaN`, estratos con menos ejemplos que folds, o desbalance global del tamaño de los folds. |
+| Solapamiento de entidades (modo grafo) | Entidades únicas por fold y entidades compartidas entre pares de folds. Es un valor informativo, no un error: las entidades pueden repetirse entre folds aunque las tripletas no se repitan. |
 
-El **dashboard HTML** muestra exactamente esta misma información con tarjetas,
-colores y barras — pensado para compartir con alguien que no use Python.
+El reporte HTML presenta la misma información con tarjetas, una tabla y
+barras de tamaño de fold, sin dependencias externas ni conexión a internet.
 
 ---
 
-## Generar el entregable completo
-
-Produce, en una sola corrida, los folds + Excel + los tres reportes de integridad:
+## Generación del entregable
 
 ```bash
-python scripts/build_deliverable.py            # usa datasets/GoT.csv, k=5
-# o vía CLI:
+python scripts/build_deliverable.py
+# equivalente vía CLI:
 python -m skfold_kge partition datasets/GoT.csv --by Column2 --k 5 --sep ";" \
     --out outputs --triple-names Subject Relation Object
 ```
 
-Salida en `outputs/`:
+Salida:
 
 ```
 outputs/
-├── folds/Fold_1.csv … Fold_5.csv      # un CSV por fold (Subject,Relation,Object,label)
+├── folds/Fold_1.csv ... Fold_5.csv    # un CSV por fold (Subject,Relation,Object,label)
 ├── folds_partitions.xlsx              # un Excel, una hoja por fold
-├── integrity_report.txt               # reporte en texto
-├── integrity_report.json              # reporte serializado
-└── integrity_report.html              # dashboard estático (abrir en navegador)
+├── integrity_report.txt
+├── integrity_report.json
+└── integrity_report.html
 ```
 
 ---
 
-## Referencia completa de la CLI
+## Referencia de la CLI
 
 ```bash
 python -m skfold_kge partition <input> --by <columna> [opciones]
@@ -242,28 +201,24 @@ python -m skfold_kge partition <input> --by <columna> [opciones]
 | Flag | Descripción |
 |---|---|
 | `input` (posicional) | Ruta o URL del CSV. |
-| `--by COLUMNA` | **Requerido.** Columna de estrato. |
-| `--k N` | Número de folds (def. `5`). |
-| `--seed N` | Semilla (def. `42`). |
-| `--sep "S"` | Separador del CSV (def. `";"`). Usa `--sep ","` para CSV estándar. |
-| `--out DIR` | Carpeta de salida (def. `outputs`). |
-| `--no-dedup` | No eliminar filas duplicadas. |
-| `--dropna` | Descartar filas con estrato `NaN` (en vez de reportarlas). |
-| `--triple-names S R O` | Renombra las 3 columnas exportadas a estos nombres (modo grafo). |
-| `--report-only` | Solo imprime el reporte por consola; no escribe archivos. Útil para validar rápido un dataset nuevo. |
-
-Ejemplos:
+| `--by COLUMNA` | Requerido. Columna de estrato. |
+| `--k N` | Número de folds. Por defecto 5. |
+| `--seed N` | Semilla. Por defecto 42. |
+| `--sep "S"` | Separador del CSV. Por defecto `;`. |
+| `--out DIR` | Carpeta de salida. Por defecto `outputs`. |
+| `--no-dedup` | No elimina filas duplicadas. |
+| `--dropna` | Descarta filas con estrato `NaN` en lugar de reportarlas. |
+| `--triple-names S R O` | Renombra las tres columnas en la exportación (modo grafo). |
+| `--report-only` | Imprime el reporte sin escribir archivos. |
 
 ```bash
-# Dataset propio con coma como separador, sin generar archivos (solo ver el reporte)
 python -m skfold_kge partition mi_dataset.csv --by clase --sep "," --report-only
 
-# Grafo con k=10 y nombres de columnas personalizados
 python -m skfold_kge partition mi_kg.csv --by relacion --k 10 \
     --triple-names sujeto relacion objeto --out salida/
 ```
 
-También existe `evaluate` (requiere los extras `[kge]` o `[text]`):
+El subcomando `evaluate` requiere los extras `[kge]` o `[text]`:
 
 ```bash
 python -m skfold_kge evaluate datasets/GoT.csv --task kge  --by Column2 --epochs 50
@@ -276,44 +231,45 @@ python -m skfold_kge evaluate noticias.csv      --task text --by label --text-co
 
 ### Estratificación Round-Robin
 
-Las filas se agrupan por el valor del estrato; cada grupo se baraja de forma
-reproducible (semilla) y se reparte entre los `k` folds en orden Round-Robin.
-Así cada fold recibe ≈ `1/k` de cada estrato.
+Las filas se agrupan por el valor del estrato. Cada grupo se baraja de forma
+reproducible (semilla fija) y se reparte entre los `k` folds en orden
+Round-Robin. Cada fold recibe aproximadamente `1/k` de cada estrato.
 
-### Sustento de la cantidad de datos (Std / CV)
+### Sustento de la cantidad de datos
 
-El reporte cuantifica, por estrato, el recuento en cada fold con su **Std** y
-**CV**. La regla práctica:
+El reporte cuantifica, por estrato, el recuento en cada fold junto con su
+desviación estándar y su coeficiente de variación:
 
 | CV | Interpretación |
 |---|---|
-| **< 5 %** | Estratificación casi perfecta (verde) |
-| 5 – 15 % | Aceptable; revisar estratos pequeños (ámbar) |
-| **> 15 %** | Desbalance: aumentar datos o reducir `k` (rojo) |
+| Menor a 5% | Distribución casi idéntica entre folds. |
+| Entre 5% y 15% | Aceptable; revisar los estratos con menos ejemplos. |
+| Mayor a 15% | Desbalance; reducir `k` o ampliar los datos de ese estrato. |
 
-Con `k=5` la proporción entrenamiento/prueba es **80/20**, estándar en benchmarks
-KGE como FB15k-237 y WN18RR.
+Con `k=5`, la proporción entrenamiento/prueba es 80/20, consistente con
+benchmarks de referencia en KGE como FB15k-237 y WN18RR.
 
-### ¿Por qué F1 Score?
+### Uso de F1 Score
 
-- **KGE:** `f1_pairwise` mide si el modelo puntúa una tripleta verdadera por
-  encima de una negativa muestreada 1:1 (clasificación binaria balanceada).
-- **Noticias falsas:** **F1 macro** no se infla con la clase mayoritaria en
-  datasets desbalanceados — penaliza por igual errores en *fake* y *real*.
+En KGE, `f1_pairwise` evalúa si el modelo puntúa una tripleta verdadera por
+encima de una negativa muestreada en proporción 1:1, lo que produce una
+clasificación binaria balanceada. En clasificación de texto, se usa F1 macro,
+que no se infla con la clase mayoritaria en datasets desbalanceados y
+penaliza por igual los errores en cada clase.
 
 ---
 
-## Detección de noticias falsas
+## Clasificación de texto / noticias falsas
 
 ```python
 from skfold_kge.evaluate import cross_validate_text, load_isot
 
-df = load_isot("isot/Fake.csv", "isot/True.csv")   # 0=fake, 1=real
+df = load_isot("isot/Fake.csv", "isot/True.csv")   # 0 = fake, 1 = real
 res = cross_validate_text(df, text_col="text", label_col="label", k=5)
-print(res["summary"]["F1"])     # {'mean':…, 'std':…, 'cv':…}
+print(res["summary"]["F1"])
 ```
 
-Loaders incluidos: `load_isot`, `load_liar`, `load_welfake`. Datasets sugeridos:
+Loaders incluidos: `load_isot`, `load_liar`, `load_welfake`.
 
 | Dataset | Tamaño | Acceso |
 |---|---|---|
@@ -330,10 +286,12 @@ from skfold_kge import StratifiedPartitioner
 from skfold_kge.evaluate import cross_validate_kge
 
 folds = StratifiedPartitioner(k=5, stratify_by="Column2").fit_transform(df)
-results = cross_validate_kge(folds, models=["TransE", "ComplEx", "RotatE"],
-                             num_epochs=200, embedding_dim=100)
+results = cross_validate_kge(
+    folds, models=["TransE", "ComplEx", "RotatE"],
+    num_epochs=200, embedding_dim=100,
+)
 
-# Añade la sección de métricas (MRR/Hits/F1 ± Std) al dashboard:
+# Incorpora la sección de métricas (MRR, Hits, F1, con desviación estándar) al reporte HTML.
 folds.verify().to_html("outputs/integrity_report.html", metrics=results)
 ```
 
@@ -343,74 +301,69 @@ folds.verify().to_html("outputs/integrity_report.html", metrics=results)
 
 | Símbolo | Descripción |
 |---|---|
-| `StratifiedPartitioner(k, stratify_by, seed, dedup, dropna_stratum, triple_columns)` | Particionador principal. `.fit_transform(df) → FoldSet` |
-| `FoldSet` | `.sizes() .fold_frame(i) .train_test(i) .iter_train_test() .verify() .to_excel() .to_csv_dir()` |
-| `IntegrityReport` | `.passed .overlap_count .warnings .to_text() .to_json() .to_html()` |
-| `partition(df, …)` | Atajo funcional |
-| `compute_filtered_ranks`, `compute_metrics_from_ranks`, `f1_pairwise` | Métricas KGE sin dependencias pesadas |
-| `evaluate.cross_validate_kge` | Comparación KGE (extra `[kge]`) |
-| `evaluate.cross_validate_text` | Clasificación de texto (extra `[text]`) |
+| `StratifiedPartitioner(k, stratify_by, seed, dedup, dropna_stratum, triple_columns)` | Particionador principal. `.fit_transform(df)` devuelve un `FoldSet`. |
+| `FoldSet` | `.sizes()`, `.fold_frame(i)`, `.train_test(i)`, `.iter_train_test()`, `.verify()`, `.to_excel()`, `.to_csv_dir()`. |
+| `IntegrityReport` | `.passed`, `.overlap_count`, `.warnings`, `.to_text()`, `.to_json()`, `.to_html()`. |
+| `partition(df, ...)` | Atajo funcional equivalente a instanciar `StratifiedPartitioner` y llamar `fit_transform`. |
+| `compute_filtered_ranks`, `compute_metrics_from_ranks`, `f1_pairwise` | Métricas de evaluación KGE, sin dependencias pesadas. |
+| `evaluate.cross_validate_kge` | Comparación de modelos KGE. Requiere el extra `[kge]`. |
+| `evaluate.cross_validate_text` | Clasificación de texto. Requiere el extra `[text]`. |
 
 ---
 
 ## Estructura del proyecto
 
 ```
-skfold_kge/            # paquete
-  partition.py         # StratifiedPartitioner + FoldSet
-  verify.py            # IntegrityReport
-  report.py            # texto / JSON / HTML (dashboard)
-  io.py                # carga y exportación
-  metrics.py           # MRR, Hits@K, f1_pairwise
-  cli.py               # interfaz de línea de comandos
-  evaluate/            # extras opcionales (kge, classification)
+skfold_kge/            paquete principal
+  partition.py         StratifiedPartitioner, FoldSet
+  verify.py            IntegrityReport
+  report.py            renderizado a texto, JSON y HTML
+  io.py                carga y exportación de datos
+  metrics.py           MRR, Hits@K, f1_pairwise
+  cli.py               interfaz de línea de comandos
+  evaluate/            extras opcionales: kge.py, classification.py
 scripts/build_deliverable.py
 examples/quickstart.py
-tests/                 # pytest
+tests/
 datasets/GoT.csv
-outputs/               # entregable generado
+outputs/               entregable generado
 ```
 
 ---
 
-## Preguntas frecuentes / Troubleshooting
+## Resolución de problemas
 
-**`KeyError: La columna de estrato '...' no está en el DataFrame`**
-El nombre pasado en `stratify_by` (o `--by`) no coincide exactamente con una
-columna del CSV. Imprime `df.columns` para ver los nombres reales (cuidado con
-espacios o mayúsculas).
+`KeyError` indicando que la columna de estrato no está en el DataFrame: el
+valor pasado en `stratify_by` (o `--by`) no coincide con el nombre exacto de
+una columna del CSV. Verificar `df.columns`, incluyendo mayúsculas y espacios.
 
-**`ValueError: k debe ser >= 2`**
-`k=1` no es validación cruzada (no quedaría fold de prueba). Usa `k>=2`.
+`ValueError: k debe ser >= 2`: con `k=1` no queda fold de prueba, por lo que
+no constituye validación cruzada.
 
-**El reporte muestra `has_na_stratum: true`**
-Hay filas cuya columna de estrato es `NaN`/vacía. Por defecto se agrupan en un
-estrato propio (no se pierden), pero conviene revisar el dato fuente. Si
-prefieres descartarlas, usa `dropna_stratum=True` (o `--dropna` en la CLI).
+`has_na_stratum` en `True`: existen filas con valor de estrato `NaN`. Por
+defecto se agrupan en un estrato propio y se reportan como aviso. Para
+descartarlas, usar `dropna_stratum=True` o el flag `--dropna`.
 
-**Avisos de "Estratos con menos de k ejemplos"**
-Alguna clase/relación tiene menos casos que folds — no puede repartirse en
-todos. No es un error, pero indica que ese estrato es muy minoritario; revisa
-si es ruido o si necesitas más datos para esa clase.
+Aviso de "estratos con menos de k ejemplos": alguna clase o relación tiene
+menos casos que folds y no puede repartirse en todos ellos. No es un error;
+indica un estrato minoritario que conviene revisar.
 
-**`ImportError` al usar `cross_validate_kge` o `cross_validate_text`**
-Faltan los extras opcionales. Instala con `pip install -e ".[kge]"` o
-`pip install -e ".[text]"` según el caso (ver [Instalación](#instalación)).
+`ImportError` al usar `cross_validate_kge` o `cross_validate_text`: faltan
+los extras opcionales correspondientes. Instalar con `pip install -e ".[kge]"`
+o `pip install -e ".[text]"`.
 
-**¿Por qué mis tamaños de fold no son exactamente iguales?**
-Es normal: si el total de un estrato no es múltiplo exacto de `k`, algunos
-folds reciben un elemento más que otros (diferencia máxima de 1 por estrato).
-Esto se ve reflejado en el CV de esa fila en la tabla de distribución.
+Tamaños de fold ligeramente distintos entre sí: es el comportamiento
+esperado cuando el total de un estrato no es múltiplo exacto de `k`; la
+diferencia máxima por estrato es de un elemento. Se refleja en el CV de la
+tabla de distribución.
 
-**¿Cómo sé qué separador (`--sep`) usar?**
-Abre el CSV con un editor de texto simple y mira el carácter entre columnas en
-la primera línea (`;`, `,` o `\t`). `pandas.read_csv` también falla con un
-error claro si el separador es incorrecto (verás una sola columna gigante).
+Separador del CSV: si no se conoce, inspeccionar la primera línea del
+archivo con un editor de texto. `pandas.read_csv` falla con un error
+identificable si el separador es incorrecto (se interpreta una sola columna).
 
-**El dashboard HTML se ve sin estilos al abrirlo**
-No debería pasar: el CSS está embebido en el mismo archivo (no depende de
-internet ni de archivos externos). Si ocurre, asegúrate de abrir el `.html`
-completo y no solo un fragmento, y revisa que no haya sido truncado al copiarlo.
+Reporte HTML sin estilos: el CSS está embebido en el mismo archivo y no
+depende de recursos externos. Si esto ocurre, verificar que el archivo se
+abrió completo y no fue truncado al copiarlo.
 
 ---
 
@@ -421,17 +374,17 @@ pip install -e ".[dev]"
 pytest
 ```
 
-Cubre: ausencia de solapamiento, cobertura total, reproducibilidad por semilla,
-distribución proporcional, deduplicación, detección de estrato NaN, solapamiento
-de entidades y las métricas (MRR/Hits/F1).
+La suite cubre: ausencia de solapamiento, cobertura total, reproducibilidad
+por semilla, distribución proporcional, deduplicación, detección de estrato
+`NaN`, solapamiento de entidades y las métricas de evaluación (MRR, Hits, F1).
 
 ---
 
 ## Reproducibilidad
 
-El notebook `Validación_Cruzada_Estratificada.ipynb` es el artefacto exploratorio
-original. Esta librería reproduce **exactamente** sus tamaños de fold
-(`640, 639, 635, 632, 630`) con `seed=42`.
+El notebook `Validación_Cruzada_Estratificada.ipynb` es el artefacto
+exploratorio original del proyecto. Esta librería reproduce sus tamaños de
+fold (`640, 639, 635, 632, 630`) con `seed=42` sobre el dataset GoT.
 
 ## Licencia
 
