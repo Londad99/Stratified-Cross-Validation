@@ -1,0 +1,247 @@
+{
+  "dataset_rows_input": 3225,
+  "dedup_removed": 49,
+  "na_removed": 0,
+  "dataset_rows_clean": 3176,
+  "k": 5,
+  "seed": 42,
+  "stratify_by": "Column2",
+  "n_strata": 11,
+  "has_na_stratum": true,
+  "na_count": 1,
+  "fold_sizes": [
+    640,
+    639,
+    635,
+    632,
+    630
+  ],
+  "fold_size_stats": {
+    "mean": 635.2,
+    "std": 3.8678,
+    "cv": 0.6089
+  },
+  "train_test_split": "80/20",
+  "overlap_count": 0,
+  "checks": {
+    "no_overlap": true,
+    "full_coverage": true
+  },
+  "distribution": [
+    {
+      "stratum": "ALLIED_WITH",
+      "total": 1517,
+      "per_fold": [
+        304,
+        304,
+        303,
+        303,
+        303
+      ],
+      "mean": 303.4,
+      "std": 0.4899,
+      "cv": 0.1615
+    },
+    {
+      "stratum": "BRANCH_OF",
+      "total": 42,
+      "per_fold": [
+        9,
+        9,
+        8,
+        8,
+        8
+      ],
+      "mean": 8.4,
+      "std": 0.4899,
+      "cv": 5.8321
+    },
+    {
+      "stratum": "FOUNDED_BY",
+      "total": 43,
+      "per_fold": [
+        9,
+        9,
+        9,
+        8,
+        8
+      ],
+      "mean": 8.6,
+      "std": 0.4899,
+      "cv": 5.6965
+    },
+    {
+      "stratum": "HEIR_TO",
+      "total": 59,
+      "per_fold": [
+        12,
+        12,
+        12,
+        12,
+        11
+      ],
+      "mean": 11.8,
+      "std": 0.4,
+      "cv": 3.3898
+    },
+    {
+      "stratum": "IN_REGION",
+      "total": 437,
+      "per_fold": [
+        88,
+        88,
+        87,
+        87,
+        87
+      ],
+      "mean": 87.4,
+      "std": 0.4899,
+      "cv": 0.5605
+    },
+    {
+      "stratum": "LED_BY",
+      "total": 179,
+      "per_fold": [
+        36,
+        36,
+        36,
+        36,
+        35
+      ],
+      "mean": 35.8,
+      "std": 0.4,
+      "cv": 1.1173
+    },
+    {
+      "stratum": "NaN",
+      "total": 1,
+      "per_fold": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean": 0.2,
+      "std": 0.4,
+      "cv": 200.0
+    },
+    {
+      "stratum": "PARENT_OF",
+      "total": 60,
+      "per_fold": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "mean": 12.0,
+      "std": 0.0,
+      "cv": 0.0
+    },
+    {
+      "stratum": "SEAT_OF",
+      "total": 243,
+      "per_fold": [
+        49,
+        49,
+        49,
+        48,
+        48
+      ],
+      "mean": 48.6,
+      "std": 0.4899,
+      "cv": 1.008
+    },
+    {
+      "stratum": "SPOUSE",
+      "total": 198,
+      "per_fold": [
+        40,
+        40,
+        40,
+        39,
+        39
+      ],
+      "mean": 39.6,
+      "std": 0.4899,
+      "cv": 1.2371
+    },
+    {
+      "stratum": "SWORN_TO",
+      "total": 397,
+      "per_fold": [
+        80,
+        80,
+        79,
+        79,
+        79
+      ],
+      "mean": 79.4,
+      "std": 0.4899,
+      "cv": 0.617
+    }
+  ],
+  "entity_overlap": {
+    "entities_per_fold": [
+      739,
+      751,
+      758,
+      728,
+      728
+    ],
+    "pairs": [
+      {
+        "pair": "1-2",
+        "common": 280
+      },
+      {
+        "pair": "1-3",
+        "common": 274
+      },
+      {
+        "pair": "1-4",
+        "common": 259
+      },
+      {
+        "pair": "1-5",
+        "common": 261
+      },
+      {
+        "pair": "2-3",
+        "common": 293
+      },
+      {
+        "pair": "2-4",
+        "common": 270
+      },
+      {
+        "pair": "2-5",
+        "common": 261
+      },
+      {
+        "pair": "3-4",
+        "common": 281
+      },
+      {
+        "pair": "3-5",
+        "common": 274
+      },
+      {
+        "pair": "4-5",
+        "common": 271
+      }
+    ]
+  },
+  "warnings": [
+    "1 fila(s) con estrato faltante (NaN) agrupadas en un estrato propio. Considere limpiarlas o usar dropna_stratum=True.",
+    "Estratos con menos de k=5 ejemplos (no presentes en todos los folds): NaN."
+  ],
+  "is_triples": true,
+  "triple_columns": [
+    "Column1",
+    "Column2",
+    "Column3"
+  ]
+}

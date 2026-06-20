@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skfold-kge"
+version = "0.1.0"
+description = "Validación cruzada k-fold estratificada para grafos de conocimiento (KGE) y clasificación de texto (detección de noticias falsas)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Stratified Cross Validation" },
+]
+keywords = [
+    "cross-validation",
+    "stratified-k-fold",
+    "knowledge-graph-embeddings",
+    "fake-news-detection",
+    "machine-learning",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Núcleo ligero: solo lo necesario para particionar, verificar, reportar y exportar.
+dependencies = [
+    "pandas>=1.3",
+    "numpy>=1.20",
+    "openpyxl>=3.0",
+]
+
+[project.optional-dependencies]
+# Evaluación de modelos KGE (TransE, ComplEx, RotatE) — pesado (~2 GB con torch).
+kge = [
+    "pykeen>=1.10",
+    "torch>=1.13",
+    "matplotlib>=3.4",
+]
+# Clasificación de texto / detección de noticias falsas.
+text = [
+    "scikit-learn>=1.0",
+]
+# Carga del dataset LIAR desde HuggingFace (solo para load_liar()).
+liar = [
+    "datasets>=2.0",
+]
+# Todo.
+all = [
+    "skfold-kge[kge,text,liar]",
+]
+# Desarrollo.
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+skfold-kge = "skfold_kge.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Londad99/Stratified-Cross-Validation"
+
+[tool.setuptools.packages.find]
+include = ["skfold_kge*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"

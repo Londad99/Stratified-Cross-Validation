@@ -1,0 +1,631 @@
+Column1,Column2,Column3,label
+Blackcrown,SEAT_OF,House Bulwer of Blackcrown,SEAT_OF
+Scattered (formerly Winterfell),SEAT_OF,House Stark of Winterfell,SEAT_OF
+The Dun Fort,SEAT_OF,House Rykker of Duskendale,SEAT_OF
+Felwood,SEAT_OF,House Fell of Felwood,SEAT_OF
+Gulltown,SEAT_OF,House Arryn of Gulltown,SEAT_OF
+unnamed tower,SEAT_OF,House Baelish of the Fingers,SEAT_OF
+the Antlers,SEAT_OF,House Buckwell of the Antlers,SEAT_OF
+Raventree Hall,SEAT_OF,House Blackwood of Raventree Hall,SEAT_OF
+Old Oak,SEAT_OF,House Oakheart of Old Oak,SEAT_OF
+Driftwood Hall,SEAT_OF,House Stane of Driftwood Hall,SEAT_OF
+Appleton,SEAT_OF,House Appleton of Appleton,SEAT_OF
+Scattered (formerly Riverrun),SEAT_OF,House Tully of Riverrun,SEAT_OF
+Grimston,SEAT_OF,House Grimm of Greyshield,SEAT_OF
+Haystack Hall,SEAT_OF,House Errol of Haystack Hall,SEAT_OF
+Gulltown,SEAT_OF,House Grafton of Gulltown,SEAT_OF
+Dragonstone,SEAT_OF,House Baratheon of Dragonstone,SEAT_OF
+Uplands,SEAT_OF,House Mullendore of Uplands,SEAT_OF
+Lord Hewett's castle on Oakenshield,SEAT_OF,House Hewett of Oakenshield,SEAT_OF
+Hoare Castle,SEAT_OF,House Hoare of Orkmont,SEAT_OF
+Corpse Lake,SEAT_OF,House Goodbrother of Corpse Lake,SEAT_OF
+Blacktyde,SEAT_OF,House Blacktyde of Blacktyde,SEAT_OF
+Smithyton,SEAT_OF,House Shermer of Smithyton,SEAT_OF
+Harrenhal,SEAT_OF,House Hoare of Orkmont,SEAT_OF
+Griffin's Roost,SEAT_OF,House Connington of Griffin's Roost,SEAT_OF
+Karhold,SEAT_OF,House Karstark of Karhold,SEAT_OF
+Holyhall,SEAT_OF,House Graceford of Holyhall,SEAT_OF
+Bronzegate,SEAT_OF,House Buckler of Bronzegate,SEAT_OF
+Brownhollow,SEAT_OF,House Brune of Brownhollow,SEAT_OF
+Heart's Home,SEAT_OF,House Corbray of Heart's Home,SEAT_OF
+The Eyrie (summer),SEAT_OF,House Arryn of the Eyrie,SEAT_OF
+Casterly Rock,SEAT_OF,House Casterly of Casterly Rock,SEAT_OF
+Standfast,SEAT_OF,House Osgrey of Standfast,SEAT_OF
+Kingshouse,SEAT_OF,House Magnar of Kingshouse,SEAT_OF
+Bear Island,SEAT_OF,House Mormont of Bear Island,SEAT_OF
+Castamere,SEAT_OF,House Reyne of Castamere,SEAT_OF
+High Tide or Driftmark,SEAT_OF,House Velaryon of Driftmark,SEAT_OF
+Blackpool,SEAT_OF,House Slate of Blackpool,SEAT_OF
+Parchments,SEAT_OF,House Penrose of Parchments,SEAT_OF
+Silverhill,SEAT_OF,House Serrett of Silverhill,SEAT_OF
+Stony Shore,SEAT_OF,House Fisher of the Stony Shore,SEAT_OF
+Coldmoat (formally),SEAT_OF,House Osgrey of Standfast,SEAT_OF
+Harrenhal,SEAT_OF,House Strong of Harrenhal,SEAT_OF
+Harlaw Hall  Harlaw,SEAT_OF,House Harlaw of Harlaw Hall,SEAT_OF
+Southshield,SEAT_OF,House Serry of Southshield,SEAT_OF
+Bitterbridge,SEAT_OF,House Caswell of Bitterbridge,SEAT_OF
+Orkmont,SEAT_OF,House Tawney of Orkmont,SEAT_OF
+Extinct,SEAT_OF,House Hook,SEAT_OF
+Witch Isle,SEAT_OF,House Upcliff,SEAT_OF
+House Costayne of Three Towers,LED_BY,Tommen Costayne,LED_BY
+House Stackspear,LED_BY,Selmond Stackspear,LED_BY
+House Fossoway of New Barrel,LED_BY,Jon Fossoway,LED_BY
+House Wylde of Rain House,LED_BY,Casper Wylde,LED_BY
+House Ironmaker,LED_BY,Erik Ironmaker,LED_BY
+House Lynderly of the Snakewood,LED_BY,Jon Lynderly,LED_BY
+House Belmore of Strongsong,LED_BY,Benedar Belmore,LED_BY
+House Harlaw of Grey Garden,LED_BY,Harras Harlaw,LED_BY
+House Santagar of Spottswood,LED_BY,Symon Santagar,LED_BY
+House Foote of Nightsong,LED_BY,Philip Foote,LED_BY
+House Ruttiger,LED_BY,Raynard Ruttiger,LED_BY
+House Swann of Stonehelm,LED_BY,Gulian Swann,LED_BY
+House Chester of Greenshield,LED_BY,Moribald Chester,LED_BY
+House Mullendore of Uplands,LED_BY,Martyn Mullendore,LED_BY
+House Harlaw of Harlaw Hall,LED_BY,Sigfryd Harlaw,LED_BY
+House Grimm of Greyshield,LED_BY,Guthor Grimm,LED_BY
+House Connington of Griffin's Roost,LED_BY,Jon Connington,LED_BY
+House Vance of Atranta,LED_BY,Norbert Vance,LED_BY
+House Norrey,LED_BY,Brandon Norrey,LED_BY
+House Paege,LED_BY,Halmon Paege,LED_BY
+House Brax of Hornvale,LED_BY,Tytos Brax,LED_BY
+House Tyrell of Brightwater Keep,LED_BY,Garlan Tyrell,LED_BY
+House Saltcliffe of Saltcliffe,LED_BY,Donnor Saltcliffe,LED_BY
+House Brune of Brownhollow,LED_BY,Bennard Brune,LED_BY
+House Tyrell of Highgarden,LED_BY,Mace Tyrell,LED_BY
+House Serry of Southshield,LED_BY,Osbert Serry,LED_BY
+House Jast,LED_BY,Antario Jast,LED_BY
+House Drumm of Old Wyk,LED_BY,Dunstan Drumm,LED_BY
+House Yronwood of Yronwood,LED_BY,Anders Yronwood,LED_BY
+House Buckler of Bronzegate,LED_BY,Ralph Buckler,LED_BY
+House Smallwood of Acorn Hall,LED_BY,Theomar Smallwood,LED_BY
+House Tarth of Evenfall Hall,LED_BY,Selwyn Tarth,LED_BY
+House Sunderland of the Three Sisters,LED_BY,Triston Sunderland,LED_BY
+House Glover of Deepwood Motte,LED_BY,Galbart Glover,LED_BY
+House Grandison of Grandview,LED_BY,Hugh Grandison,LED_BY
+Jared Frey,SPOUSE,Alys Frey,SPOUSE
+Luthor Tyrell,SPOUSE,Elyn Norridge,SPOUSE
+Eleanor Mooton,SPOUSE,Dickon Tarly,SPOUSE
+Tyana Wylde,SPOUSE,Aenys Frey,SPOUSE
+Betharios,SPOUSE,Symond Frey,SPOUSE
+Kiera of Tyrosh,SPOUSE,Valarr Targaryen,SPOUSE
+Naerys Targaryen,SPOUSE,Aegon IV,SPOUSE
+Willam Stark,SPOUSE,Melantha Blackwood,SPOUSE
+Larra Rogare,SPOUSE,Viserys II,SPOUSE
+Rhaella Targaryen,SPOUSE,Aerys II,SPOUSE
+Rodwell Stark,SPOUSE,Myriame Manderly,SPOUSE
+Marya Seaworth,SPOUSE,Davos Seaworth,SPOUSE
+Sigorn,SPOUSE,Alys Karstark,SPOUSE
+Arthur Ambrose,SPOUSE,Alysanne Hightower,SPOUSE
+Drogo,SPOUSE,Daenerys Targaryen,SPOUSE
+Desmond Redwyne,SPOUSE,Denyse Hightower,SPOUSE
+Baela Targaryen,SPOUSE,Alyn Velaryon,SPOUSE
+Kyra Frey,SPOUSE,Garse Goodbrook,SPOUSE
+Illyrio's first wife,SPOUSE,Illyrio Mopatis,SPOUSE
+Rodrik Arryn,SPOUSE,Daella Targaryen,SPOUSE
+Rhea Florent,SPOUSE,Leyton Hightower,SPOUSE
+Sybelle Glover,SPOUSE,Robett Glover,SPOUSE
+Rohanne Webber,SPOUSE,Eustace Osgrey,SPOUSE
+Shaera Targaryen,SPOUSE,Jaehaerys II,SPOUSE
+Olenna Redwyne,SPOUSE,Luthor Tyrell,SPOUSE
+Lorra Royce,SPOUSE,Beron Stark,SPOUSE
+Raymund Frey,SPOUSE,Beony Beesbury,SPOUSE
+Dalla,SPOUSE,Mance Rayder,SPOUSE
+Stevron Frey,SPOUSE,Jeyne Lydden,SPOUSE
+Viserys I,SPOUSE,Aemma Arryn,SPOUSE
+Walder Frey,SPOUSE,Alyssa Blackwood,SPOUSE
+Elys Waynwood,SPOUSE,Alys Arryn,SPOUSE
+Craster,SPOUSE,Ferny,SPOUSE
+Oberyn Nymeros Martell,SPOUSE,Ellaria Sand,SPOUSE
+Jyana,SPOUSE,Howland Reed,SPOUSE
+Lythene Frey,SPOUSE,Lucias Vypren,SPOUSE
+Donella Hornwood,SPOUSE,Ramsay Snow,SPOUSE
+Randyll Tarly,SPOUSE,Melessa Florent,SPOUSE
+Titus Peake,SPOUSE,Margot Lannister,SPOUSE
+Rickard Ryswell,ALLIED_WITH,House Ryswell of the Rills,ALLIED_WITH
+Meredyth Crane,ALLIED_WITH,House Crane of Red Lake,ALLIED_WITH
+Ormond Yronwood,ALLIED_WITH,House Yronwood of Yronwood,ALLIED_WITH
+Skahaz mo Kandaq,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Sylva Santagar,ALLIED_WITH,House Santagar of Spottswood,ALLIED_WITH
+Rhaena Targaryen,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Melessa Florent,ALLIED_WITH,House Florent of Brightwater Keep,ALLIED_WITH
+Lyanna Stark,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Herrock Kenning,ALLIED_WITH,House Kenning of Harlaw,ALLIED_WITH
+Laenor Velaryon.,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Maege Mormont,ALLIED_WITH,House Mormont of Bear Island,ALLIED_WITH
+Jeyne Royce,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Hugh,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Shella Whent,ALLIED_WITH,House Whent of Harrenhal,ALLIED_WITH
+Ryam Redwyne,ALLIED_WITH,House Redwyne of the Arbor,ALLIED_WITH
+Butterbumps,ALLIED_WITH,House Tyrell of Highgarden,ALLIED_WITH
+Argella Durrandon,ALLIED_WITH,House Durrandon,ALLIED_WITH
+Bennis,ALLIED_WITH,House Osgrey of Standfast,ALLIED_WITH
+Sylva Santagar,ALLIED_WITH,House Estermont of Greenstone,ALLIED_WITH
+Romny Weaver,ALLIED_WITH,House Weaver,ALLIED_WITH
+Arianne Martell,ALLIED_WITH,House Nymeros Martell of Sunspear,ALLIED_WITH
+Laenor Velaryon.,ALLIED_WITH,House Velaryon of Driftmark,ALLIED_WITH
+Forley Prester,ALLIED_WITH,House Prester of Feastfires,ALLIED_WITH
+Tytos Brax,ALLIED_WITH,House Brax of Hornvale,ALLIED_WITH
+Alerie Hightower,ALLIED_WITH,House Hightower of the Hightower,ALLIED_WITH
+Lyarra Stark,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Erryk,ALLIED_WITH,House Tyrell of Highgarden,ALLIED_WITH
+Alliser Thorne,ALLIED_WITH,House Thorne,ALLIED_WITH
+Harrion Karstark,ALLIED_WITH,House Karstark of Karhold,ALLIED_WITH
+Alyssa Targaryen,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Elbert Arryn,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Denys Arryn,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Tya Lannister,ALLIED_WITH,House Baratheon of Storm's End,ALLIED_WITH
+Devan Seaworth,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Steffon Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Mariah Martell,ALLIED_WITH,House Nymeros Martell of Sunspear,ALLIED_WITH
+Kyra,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Tommard Heddle,ALLIED_WITH,House Butterwell,ALLIED_WITH
+Kurleket,ALLIED_WITH,House Bracken of Stone Hedge,ALLIED_WITH
+Elyana Vypren,ALLIED_WITH,House Wylde of Rain House,ALLIED_WITH
+Sawane Botley,ALLIED_WITH,House Botley of Lordsport,ALLIED_WITH
+Elwood,ALLIED_WITH,House Tully of Riverrun,ALLIED_WITH
+Skittrick,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Casper Wylde,ALLIED_WITH,House Wylde of Rain House,ALLIED_WITH
+Tanda Stokeworth,ALLIED_WITH,House Stokeworth of Stokeworth,ALLIED_WITH
+Jon Connington,ALLIED_WITH,House Connington of Griffin's Roost,ALLIED_WITH
+Lysa Meadows,ALLIED_WITH,House Tyrell of Highgarden,ALLIED_WITH
+Godric Borrell,ALLIED_WITH,House Borrell of Sweetsister,ALLIED_WITH
+Lucas Inchfield,ALLIED_WITH,House Webber of Coldmoat,ALLIED_WITH
+Philip Foote,ALLIED_WITH,House Foote of Nightsong,ALLIED_WITH
+Ronald Connington,ALLIED_WITH,House Connington of Griffin's Roost,ALLIED_WITH
+Cersei Lannister,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Arys Oakheart,ALLIED_WITH,House Oakheart of Old Oak,ALLIED_WITH
+Cersei Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Randyll Tarly,ALLIED_WITH,House Tarly of Horn Hill,ALLIED_WITH
+Elyana Vypren,ALLIED_WITH,House Vypren,ALLIED_WITH
+Jon Umber,ALLIED_WITH,House Umber of the Last Hearth,ALLIED_WITH
+Wynton Stout,ALLIED_WITH,House Stout of Goldgrass,ALLIED_WITH
+Addam Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Orys Baratheon,ALLIED_WITH,House Baratheon of Storm's End,ALLIED_WITH
+Alyssa Velaryon,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Wylla Manderly,ALLIED_WITH,House Manderly of White Harbor,ALLIED_WITH
+Wendel Manderly,ALLIED_WITH,House Manderly of White Harbor,ALLIED_WITH
+Cassana Estermont,ALLIED_WITH,House Estermont of Greenstone,ALLIED_WITH
+Myriame Manderly,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Catelyn Stark,ALLIED_WITH,House Tully of Riverrun,ALLIED_WITH
+Morros Slynt,ALLIED_WITH,House Slynt of Harrenhal,ALLIED_WITH
+Dick,ALLIED_WITH,House Bolton of the Dreadfort,ALLIED_WITH
+Lord Staunton,ALLIED_WITH,House Staunton of Rook's Rest,ALLIED_WITH
+Leona Woolfield,ALLIED_WITH,House Manderly of White Harbor,ALLIED_WITH
+Humfrey Clifton,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Lucas Blackwood,ALLIED_WITH,House Blackwood of Raventree Hall,ALLIED_WITH
+Bennarion Botley,ALLIED_WITH,House Botley of Lordsport,ALLIED_WITH
+Kyra Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Tanton Fossoway,ALLIED_WITH,House Fossoway of Cider Hall,ALLIED_WITH
+Tywin Lannister,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Cletus Yronwood,ALLIED_WITH,House Yronwood of Yronwood,ALLIED_WITH
+Lollys Stokeworth,ALLIED_WITH,House Stokeworth of Stokeworth,ALLIED_WITH
+Daenerys Targaryen,ALLIED_WITH,House Nymeros Martell of Sunspear,ALLIED_WITH
+Humfrey Beesbury,ALLIED_WITH,House Beesbury of Honeyholt,ALLIED_WITH
+Olenna Redwyne,ALLIED_WITH,House Tyrell of Highgarden,ALLIED_WITH
+Humfrey Hardyng,ALLIED_WITH,House Hardyng,ALLIED_WITH
+Byron,ALLIED_WITH,House Baelish of the Fingers,ALLIED_WITH
+Wallace Waynwood,ALLIED_WITH,House Waynwood of Ironoaks,ALLIED_WITH
+Rodrik Arryn,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Minisa Whent,ALLIED_WITH,House Tully of Riverrun,ALLIED_WITH
+Runcel Hightower,ALLIED_WITH,House Hightower of the Hightower,ALLIED_WITH
+Ellery Vance,ALLIED_WITH,House Vance of Atranta,ALLIED_WITH
+Walder Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Bennard Brune,ALLIED_WITH,House Brune of Brownhollow,ALLIED_WITH
+Donnel Swann,ALLIED_WITH,House Swann of Stonehelm,ALLIED_WITH
+Selyse Florent,ALLIED_WITH,House Florent of Brightwater Keep,ALLIED_WITH
+Humfrey Swyft,ALLIED_WITH,House Swyft of Cornfield,ALLIED_WITH
+Stannis Seaworth,ALLIED_WITH,House Seaworth of Cape Wrath,ALLIED_WITH
+Dagmer,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Willis Wode,ALLIED_WITH,House Whent of Harrenhal,ALLIED_WITH
+Walder Goodbrook,ALLIED_WITH,House Goodbrook,ALLIED_WITH
+Jeyne Goodbrook,ALLIED_WITH,House Goodbrook,ALLIED_WITH
+Alester Florent,ALLIED_WITH,House Florent of Brightwater Keep,ALLIED_WITH
+Qarl Kenning,ALLIED_WITH,House Kenning of Harlaw,ALLIED_WITH
+Laena Velaryon,ALLIED_WITH,House Velaryon of Driftmark,ALLIED_WITH
+Wendell Webber,ALLIED_WITH,House Webber of Coldmoat,ALLIED_WITH
+Barba Bracken,ALLIED_WITH,House Bracken of Stone Hedge,ALLIED_WITH
+Manfryd Lothston,ALLIED_WITH,House Lothston of Harrenhal,ALLIED_WITH
+Ellyn Ever Sweet,ALLIED_WITH,House Beesbury of Honeyholt,ALLIED_WITH
+Marna Locke,ALLIED_WITH,House Locke of Oldcastle,ALLIED_WITH
+Sylwa Paege,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Jeyne Marbrand,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Pycelle,ALLIED_WITH,House Baratheon of King's Landing,ALLIED_WITH
+Brienne of Tarth,ALLIED_WITH,House Tarth of Evenfall Hall,ALLIED_WITH
+Qarlton Chelsted,ALLIED_WITH,House Chelsted,ALLIED_WITH
+John the Oak,ALLIED_WITH,House Oakheart of Old Oak,ALLIED_WITH
+Cyrenna Swann,ALLIED_WITH,House Swann of Stonehelm,ALLIED_WITH
+Norne Goodbrother,ALLIED_WITH,House Goodbrother of Shatterstone,ALLIED_WITH
+Maron Botley,ALLIED_WITH,House Botley of Lordsport,ALLIED_WITH
+Yohn Royce,ALLIED_WITH,House Royce of Runestone,ALLIED_WITH
+Cerissa Brax,ALLIED_WITH,House Brax of Hornvale,ALLIED_WITH
+Dake,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Ardrian Celtigar,ALLIED_WITH,House Celtigar of Claw Isle,ALLIED_WITH
+Mikken,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Beren Tallhart,ALLIED_WITH,House Tallhart of Torrhen's Square,ALLIED_WITH
+Jorah Mormont,ALLIED_WITH,House Mormont of Bear Island,ALLIED_WITH
+Yohn Farwynd,ALLIED_WITH,House Farwynd of the Lonely Light,ALLIED_WITH
+Amerei Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Red Lamb,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Barra,ALLIED_WITH,House Baratheon of Storm's End,ALLIED_WITH
+Alyssa Blackwood,ALLIED_WITH,House Blackwood of Raventree Hall,ALLIED_WITH
+Gulian Qorgyle,ALLIED_WITH,House Qorgyle of Sandstone,ALLIED_WITH
+Walder Brax,ALLIED_WITH,House Brax of Hornvale,ALLIED_WITH
+Donnor Saltcliffe,ALLIED_WITH,House Saltcliffe of Saltcliffe,ALLIED_WITH
+Bethany Redwyne,ALLIED_WITH,House Rowan of Goldengrove,ALLIED_WITH
+Illyrio Mopatis,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Maron Greyjoy,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Lewys,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Calla Blackfyre,ALLIED_WITH,House Blackfyre of King's Landing,ALLIED_WITH
+Ormund Wylde,ALLIED_WITH,House Wylde of Rain House,ALLIED_WITH
+Moon Boy,ALLIED_WITH,House Baratheon of King's Landing,ALLIED_WITH
+Dyanna Dayne,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Ben,ALLIED_WITH,House Bolton of the Dreadfort,ALLIED_WITH
+Lorra Royce,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Luwin,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Regenard Estren,ALLIED_WITH,House Estren of Wyndhall,ALLIED_WITH
+Jyck,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Archibald Yronwood,ALLIED_WITH,House Yronwood of Yronwood,ALLIED_WITH
+Rhaegar Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Cleyton Caswell,ALLIED_WITH,House Caswell of Bitterbridge,ALLIED_WITH
+Trystane Martell,ALLIED_WITH,House Nymeros Martell of Sunspear,ALLIED_WITH
+Betharios,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Shiera Seastar,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Lucas Roote,ALLIED_WITH,House Roote of Lord Harroway's Town,ALLIED_WITH
+Alyx Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Willem Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Simon Staunton,ALLIED_WITH,House Staunton of Rook's Rest,ALLIED_WITH
+Eden Risley,ALLIED_WITH,House Risley,ALLIED_WITH
+Vayon Poole,ALLIED_WITH,House Poole,ALLIED_WITH
+Salladhor Saan,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Stygg,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Gerold Hightower,ALLIED_WITH,House Hightower of the Hightower,ALLIED_WITH
+Morra,ALLIED_WITH,House Nymeros Martell of Sunspear,ALLIED_WITH
+Aron Santagar,ALLIED_WITH,House Santagar of Spottswood,ALLIED_WITH
+Amerei Frey,ALLIED_WITH,House Lannister of Darry,ALLIED_WITH
+Larence Snow,ALLIED_WITH,House Hornwood of Hornwood,ALLIED_WITH
+Carolei Waynwood,ALLIED_WITH,House Waynwood of Ironoaks,ALLIED_WITH
+Zia Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Lorimer,ALLIED_WITH,House Lefford of the Golden Tooth,ALLIED_WITH
+Gregor Clegane,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Rylene Florent,ALLIED_WITH,House Crane of Red Lake,ALLIED_WITH
+Rhonda Rowan,ALLIED_WITH,House Rowan of Goldengrove,ALLIED_WITH
+Garse Goodbrook,ALLIED_WITH,House Goodbrook,ALLIED_WITH
+Willem Wylde,ALLIED_WITH,House Wylde of Rain House,ALLIED_WITH
+Valarr Targaryen,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Darlessa Marbrand,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Rohanne Webber,ALLIED_WITH,House Osgrey of Standfast,ALLIED_WITH
+Murmison,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Harbert Paege,ALLIED_WITH,House Paege,ALLIED_WITH
+Nan,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Godry Farring,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Alys Arryn,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Gerold Dayne,ALLIED_WITH,House Dayne of High Hermitage,ALLIED_WITH
+Walder Rivers,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Franklyn Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Shirei Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Helya,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Andros Brax,ALLIED_WITH,House Brax of Hornvale,ALLIED_WITH
+Mohor,ALLIED_WITH,House Bracken of Stone Hedge,ALLIED_WITH
+Harwyn Plumm,ALLIED_WITH,House Plumm,ALLIED_WITH
+Edmyn Tully,ALLIED_WITH,House Tully of Riverrun,ALLIED_WITH
+Argrave the Defiant,ALLIED_WITH,House Butterwell,ALLIED_WITH
+Alester Norcross,ALLIED_WITH,House Norcross,ALLIED_WITH
+Symond Botley,ALLIED_WITH,House Botley of Lordsport,ALLIED_WITH
+Teora Kyndall,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Jhogo,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Elinor Tyrell,ALLIED_WITH,House Tyrell of Highgarden,ALLIED_WITH
+Osmund Kettleblack,ALLIED_WITH,House Kettleblack,ALLIED_WITH
+Horton Redfort,ALLIED_WITH,House Redfort of Redfort,ALLIED_WITH
+Janos Slynt,ALLIED_WITH,House Slynt of Harrenhal,ALLIED_WITH
+Preston Greenfield,ALLIED_WITH,House Greenfield of Greenfield,ALLIED_WITH
+Myles Mooton,ALLIED_WITH,House Mooton of Maidenpool,ALLIED_WITH
+Arthor Karstark,ALLIED_WITH,House Karstark of Karhold,ALLIED_WITH
+Gowen Baratheon,ALLIED_WITH,House Baratheon of Storm's End,ALLIED_WITH
+Corenna Swann,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Androw Ashford,ALLIED_WITH,House Ashford of Ashford,ALLIED_WITH
+Rhaenyra Targaryen,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Steffon Stackspear,ALLIED_WITH,House Stackspear,ALLIED_WITH
+Varly,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Jaime Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Endrew Tarth,ALLIED_WITH,House Tarth of Evenfall Hall,ALLIED_WITH
+Gawen Glover,ALLIED_WITH,House Glover of Deepwood Motte,ALLIED_WITH
+Paxter Redwyne,ALLIED_WITH,House Redwyne of the Arbor,ALLIED_WITH
+Morgarth,ALLIED_WITH,House Baelish of the Fingers,ALLIED_WITH
+Rolland Uffering,ALLIED_WITH,House Uffering,ALLIED_WITH
+Delena Florent,ALLIED_WITH,House Norcross,ALLIED_WITH
+Arra Norrey,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Robin Hollard,ALLIED_WITH,House Hollard,ALLIED_WITH
+Hoster Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Squint,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Alyn Tarbeck,ALLIED_WITH,House Tarbeck of Tarbeck Hall,ALLIED_WITH
+Lewys Lydden,ALLIED_WITH,House Lydden of Deep Den,ALLIED_WITH
+Beony Beesbury,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Willam Wythers,ALLIED_WITH,House Wythers,ALLIED_WITH
+Alebelly,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Carrot,ALLIED_WITH,House Royce of the Gates of the Moon,ALLIED_WITH
+Alysanne Tarth,ALLIED_WITH,House Tarth of Evenfall Hall,ALLIED_WITH
+Jaehaerys Targaryen,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Rolly Duckfield,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Wilbert Osgrey,ALLIED_WITH,House Osgrey of Standfast,ALLIED_WITH
+Daemon II Blackfyre,ALLIED_WITH,House Blackfyre of King's Landing,ALLIED_WITH
+Jeffory Norcross,ALLIED_WITH,House Norcross,ALLIED_WITH
+Alysanne Lefford,ALLIED_WITH,House Lefford of the Golden Tooth,ALLIED_WITH
+Senelle,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Aegon Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Berena Hornwood,ALLIED_WITH,House Hornwood of Hornwood,ALLIED_WITH
+Gwayne Hightower,ALLIED_WITH,House Hightower of the Hightower,ALLIED_WITH
+Ronald Vance,ALLIED_WITH,House Vance of Atranta,ALLIED_WITH
+Liane Vance,ALLIED_WITH,House Vance of Wayfarer's Rest,ALLIED_WITH
+Moribald Chester,ALLIED_WITH,House Chester of Greenshield,ALLIED_WITH
+Three-Tooth,ALLIED_WITH,House Harlaw of Harlaw,ALLIED_WITH
+Denys Drumm,ALLIED_WITH,House Drumm of Old Wyk,ALLIED_WITH
+Mela,ALLIED_WITH,House Arryn of the Eyrie,ALLIED_WITH
+Jeyne Lydden,ALLIED_WITH,House Lydden of Deep Den,ALLIED_WITH
+Jothos Slynt,ALLIED_WITH,House Slynt of Harrenhal,ALLIED_WITH
+Jayne Bracken,ALLIED_WITH,House Bracken of Stone Hedge,ALLIED_WITH
+Manfred Dondarrion,ALLIED_WITH,House Dondarrion of Blackhaven,ALLIED_WITH
+Lucan,ALLIED_WITH,House Whent of Harrenhal,ALLIED_WITH
+Steffon Fossoway,ALLIED_WITH,House Fossoway of Cider Hall,ALLIED_WITH
+Thormor Ironmaker,ALLIED_WITH,House Ironmaker,ALLIED_WITH
+Melara Crane,ALLIED_WITH,House Crane of Red Lake,ALLIED_WITH
+Jeyne Westerling,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Theo Wull,ALLIED_WITH,House Wull,ALLIED_WITH
+Rodrik Stark,ALLIED_WITH,House Stark of Winterfell,ALLIED_WITH
+Eleanor Mooton,ALLIED_WITH,House Tarly of Horn Hill,ALLIED_WITH
+Annara Farring,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Jojen Reed,ALLIED_WITH,House Reed of Greywater Watch,ALLIED_WITH
+Aenys Frey,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Hobber Redwyne,ALLIED_WITH,House Redwyne of the Arbor,ALLIED_WITH
+Mors Martell,ALLIED_WITH,House Nymeros Martell of Sunspear,ALLIED_WITH
+Wulfe,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Aemond Targaryen,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Eggon,ALLIED_WITH,House Clegane,ALLIED_WITH
+Bethany Bolton,ALLIED_WITH,House Bolton of the Dreadfort,ALLIED_WITH
+Jasper Redfort,ALLIED_WITH,House Redfort of Redfort,ALLIED_WITH
+Melessa Florent,ALLIED_WITH,House Tarly of Horn Hill,ALLIED_WITH
+Ermesande Hayford,ALLIED_WITH,House Lannister of Casterly Rock,ALLIED_WITH
+Hubard Rambton,ALLIED_WITH,House Rambton,ALLIED_WITH
+Beric Dondarrion,ALLIED_WITH,House Dondarrion of Blackhaven,ALLIED_WITH
+Dagos Manwoody,ALLIED_WITH,House Manwoody of Kingsgrave,ALLIED_WITH
+Lysa Arryn,ALLIED_WITH,House Tully of Riverrun,ALLIED_WITH
+Raynald Westerling,ALLIED_WITH,House Westerling of the Crag,ALLIED_WITH
+Falia Flowers,ALLIED_WITH,House Hewett of Oakenshield,ALLIED_WITH
+Clarent Crakehall,ALLIED_WITH,House Crakehall of Crakehall,ALLIED_WITH
+Titus Peake,ALLIED_WITH,House Peake of Starpike,ALLIED_WITH
+Wate,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Rylene Florent,ALLIED_WITH,House Florent of Brightwater Keep,ALLIED_WITH
+Dickon Tarly,ALLIED_WITH,House Tarly of Horn Hill,ALLIED_WITH
+Robin Ryger,ALLIED_WITH,House Ryger of Willow Wood,ALLIED_WITH
+Marq Piper,ALLIED_WITH,House Piper of Pinkmaiden,ALLIED_WITH
+Ceryse Hightower,ALLIED_WITH,House Hightower of the Hightower,ALLIED_WITH
+Steffon Seaworth,ALLIED_WITH,House Seaworth of Cape Wrath,ALLIED_WITH
+Davos Seaworth,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Kennos of Kayce,ALLIED_WITH,House Kenning of Kayce,ALLIED_WITH
+Ossy,ALLIED_WITH,House Royce of the Gates of the Moon,ALLIED_WITH
+Rycherd Crane,ALLIED_WITH,House Crane of Red Lake,ALLIED_WITH
+Lyman Beesbury,ALLIED_WITH,House Beesbury of Honeyholt,ALLIED_WITH
+Gyles Farwynd,ALLIED_WITH,House Farwynd of the Lonely Light,ALLIED_WITH
+Lucas Lothston,ALLIED_WITH,House Lothston of Harrenhal,ALLIED_WITH
+Willam Dustin,ALLIED_WITH,House Dustin of Barrowton,ALLIED_WITH
+Helicent Uffering,ALLIED_WITH,House Uffering,ALLIED_WITH
+Pate,ALLIED_WITH,House Moreland,ALLIED_WITH
+Qalen,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Lymond Vikary,ALLIED_WITH,House Vikary,ALLIED_WITH
+Larra Rogare,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Vickon Botley,ALLIED_WITH,House Botley of Lordsport,ALLIED_WITH
+Tyana Wylde,ALLIED_WITH,House Frey of the Crossing,ALLIED_WITH
+Royce Coldwater,ALLIED_WITH,House Coldwater of Coldwater Burn,ALLIED_WITH
+Aeron Greyjoy,ALLIED_WITH,House Greyjoy of Pyke,ALLIED_WITH
+Jeyne Swann,ALLIED_WITH,House Swann of Stonehelm,ALLIED_WITH
+Clarence Charlton,ALLIED_WITH,House Charlton,ALLIED_WITH
+Robin Peasebury,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Justin Massey,ALLIED_WITH,House Baratheon of Dragonstone,ALLIED_WITH
+Will Humble,ALLIED_WITH,House Humble,ALLIED_WITH
+Ronnet Connington,ALLIED_WITH,House Connington of Griffin's Roost,ALLIED_WITH
+Mariah Martell,ALLIED_WITH,House Targaryen of King's Landing,ALLIED_WITH
+Olyvar Oakheart,ALLIED_WITH,House Oakheart of Old Oak,ALLIED_WITH
+House Frost,IN_REGION,The North,IN_REGION
+House Risley,IN_REGION,The Reach,IN_REGION
+House Moss,IN_REGION,The North,IN_REGION
+House Prester of Feastfires,IN_REGION,The Westerlands,IN_REGION
+House Wyl of the Boneway,IN_REGION,Dorne,IN_REGION
+House Shawney,IN_REGION,The Riverlands,IN_REGION
+House Hightower of the Hightower,IN_REGION,The Reach,IN_REGION
+House Swyft of Cornfield,IN_REGION,The Westerlands,IN_REGION
+House Hollard,IN_REGION,The Crownlands,IN_REGION
+House Wagstaff,IN_REGION,The Stormlands,IN_REGION
+House Rogers of Amberly,IN_REGION,The Stormlands,IN_REGION
+House Donniger,IN_REGION,The Vale,IN_REGION
+House Baratheon of King's Landing,IN_REGION,The Crownlands,IN_REGION
+House Darke,IN_REGION,The Crownlands,IN_REGION
+House Lake,IN_REGION,The North,IN_REGION
+House Wendwater,IN_REGION,The Crownlands,IN_REGION
+House Brownhill,IN_REGION,Dorne,IN_REGION
+House Willum,IN_REGION,The Reach,IN_REGION
+House Stonetree of Harlaw,IN_REGION,Iron Islands,IN_REGION
+House Wull,IN_REGION,The North,IN_REGION
+House Overton,IN_REGION,The North,IN_REGION
+House Myatt,IN_REGION,The Westerlands,IN_REGION
+House Ryger of Willow Wood,IN_REGION,The Riverlands,IN_REGION
+House Buckler of Bronzegate,IN_REGION,The Stormlands,IN_REGION
+House Kettleblack,IN_REGION,The Crownlands,IN_REGION
+House Bulwer of Blackcrown,IN_REGION,The Reach,IN_REGION
+House Wode,IN_REGION,The Riverlands,IN_REGION
+House Osgrey of Leafy Lake,IN_REGION,The Reach,IN_REGION
+House Florent of Brightwater Keep,IN_REGION,The Reach,IN_REGION
+House Whent of Harrenhal,IN_REGION,The Riverlands,IN_REGION
+House Vyrwel of Darkdell,IN_REGION,The Reach,IN_REGION
+House Moore,IN_REGION,The Vale,IN_REGION
+House Thenn,IN_REGION,The North,IN_REGION
+House Wells,IN_REGION,The North,IN_REGION
+House Lannister of Lannisport,IN_REGION,The Westerlands,IN_REGION
+House Brook,IN_REGION,Dorne,IN_REGION
+House Greyiron of Orkmont,IN_REGION,Iron Islands,IN_REGION
+House Farring,IN_REGION,The Crownlands,IN_REGION
+House Pyne,IN_REGION,The Crownlands,IN_REGION
+House Garner,IN_REGION,The Westerlands,IN_REGION
+House Brune of the Dyre Den,IN_REGION,The Crownlands,IN_REGION
+House Baelish of Harrenhal,IN_REGION,The Riverlands,IN_REGION
+House Durwell,IN_REGION,The Reach,IN_REGION
+House Graceford of Holyhall,IN_REGION,The Reach,IN_REGION
+House Woods,IN_REGION,The North,IN_REGION
+House Redwyne of the Arbor,IN_REGION,The Reach,IN_REGION
+House Hunter of Longbow Hall,IN_REGION,The Vale,IN_REGION
+House Fenn,IN_REGION,The Neck,IN_REGION
+House Darry of Darry,IN_REGION,The Riverlands,IN_REGION
+House Rollingford,IN_REGION,The Crownlands,IN_REGION
+House Caron of Nightsong,IN_REGION,The Stormlands,IN_REGION
+House Greengood,IN_REGION,The Neck,IN_REGION
+House Tallhart of Torrhen's Square,IN_REGION,The North,IN_REGION
+House Roote of Lord Harroway's Town,IN_REGION,The Riverlands,IN_REGION
+House Wayn,IN_REGION,The Riverlands,IN_REGION
+House Longwaters,IN_REGION,The Crownlands,IN_REGION
+House Herston,IN_REGION,The Stormlands,IN_REGION
+House Boggs,IN_REGION,The North,IN_REGION
+House Santagar of Spottswood,IN_REGION,Dorne,IN_REGION
+House Graves,IN_REGION,The Reach,IN_REGION
+House Uller of Hellholt,IN_REGION,Dorne,IN_REGION
+House Toyne,IN_REGION,The Stormlands,IN_REGION
+House Goodbrother of Downdelving,IN_REGION,Iron Islands,IN_REGION
+House Waynwood of Ironoaks,IN_REGION,The Vale,IN_REGION
+House Frey of Riverrun,IN_REGION,The Riverlands,IN_REGION
+House Piper of Pinkmaiden,IN_REGION,The Riverlands,IN_REGION
+House Mallery,IN_REGION,The Crownlands,IN_REGION
+House Blanetree,IN_REGION,The Riverlands,IN_REGION
+House Heddle,IN_REGION,The Riverlands,IN_REGION
+House Webber of Coldmoat,IN_REGION,The Reach,IN_REGION
+House Goodbrother of Crow Spike Keep,IN_REGION,Iron Islands,IN_REGION
+House Manning,IN_REGION,The Crownlands,IN_REGION
+House Harte,IN_REGION,The Crownlands,IN_REGION
+House Dustin of Barrowton,IN_REGION,The North,IN_REGION
+House Kyndall,IN_REGION,The Westerlands,IN_REGION
+House Farwynd of the Lonely Light,IN_REGION,Iron Islands,IN_REGION
+House Nymeros Martell of Sunspear,IN_REGION,Dorne,IN_REGION
+House Flint of Breakstone Hill,IN_REGION,The North,IN_REGION
+House Drinkwater,IN_REGION,Dorne,IN_REGION
+House Sunderly of Saltcliffe,IN_REGION,Iron Islands,IN_REGION
+House Grandison of Grandview,IN_REGION,The Stormlands,IN_REGION
+House Yarwyck,IN_REGION,The Westerlands,IN_REGION
+House Magnar of Kingshouse,IN_REGION,The North,IN_REGION
+House Quagg,IN_REGION,The Neck,IN_REGION
+House Horpe,IN_REGION,The Stormlands,IN_REGION
+House Kidwell of Ivy Hall,IN_REGION,The Reach,IN_REGION
+House Kellington,IN_REGION,The Stormlands,IN_REGION
+House Melcolm of Old Anchor,SWORN_TO,House Arryn of the Eyrie,SWORN_TO
+House Moreland,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Goodbrother of Corpse Lake,SWORN_TO,House Goodbrother of Hammerhorn,SWORN_TO
+House Flint  of the mountains,SWORN_TO,House Stark of Winterfell,SWORN_TO
+House Cressey,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Volmark,SWORN_TO,House Harlaw of Harlaw,SWORN_TO
+House Pyne,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Baratheon of Storm's End,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Mallery,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Risley,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Hamell,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Horpe,SWORN_TO,House Baratheon of Storm's End,SWORN_TO
+House Serry of Southshield,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Baratheon of King's Landing,SWORN_TO,House Baratheon of Dragonstone,SWORN_TO
+House Hastwyck,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Rosby of Rosby,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Reed of Greywater Watch,SWORN_TO,House Stark of Winterfell,SWORN_TO
+House Vaith of the Red Dunes,SWORN_TO,House Nymeros Martell of Sunspear,SWORN_TO
+House Poole,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Grandison of Grandview,SWORN_TO,House Baratheon of Storm's End,SWORN_TO
+House Blount,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Lannister of Casterly Rock,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Stackspear,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Mooton of Maidenpool,SWORN_TO,House Baelish of Harrenhal,SWORN_TO
+House Holt,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Wynch of Iron Holt,SWORN_TO,House Greyjoy of Pyke,SWORN_TO
+House Celtigar of Claw Isle,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Flint of Flint's Finger,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Tallhart of Torrhen's Square,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Plumm,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Caron of Nightsong,SWORN_TO,House Baratheon of Dragonstone,SWORN_TO
+House Farwynd of the Lonely Light,SWORN_TO,House Greyjoy of Pyke,SWORN_TO
+House Cray,SWORN_TO,House Reed of Greywater Watch,SWORN_TO
+House Shett of Gull Tower,SWORN_TO,House Royce of Runestone,SWORN_TO
+House Sarsfield of Sarsfield,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Royce of Runestone,SWORN_TO,House Arryn of the Eyrie,SWORN_TO
+House Rowan of Goldengrove,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Borrell of Sweetsister,SWORN_TO,House Sunderland of the Three Sisters,SWORN_TO
+House Graceford of Holyhall,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Tully of Riverrun,SWORN_TO,House Stark of Winterfell,SWORN_TO
+House Yarwyck,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Hasty,SWORN_TO,House Baratheon of Storm's End,SWORN_TO
+House Bole,SWORN_TO,House Glover of Deepwood Motte,SWORN_TO
+House Bywater,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Grimm of Greyshield,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Harclay,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Stonetree of Harlaw,SWORN_TO,House Harlaw of Harlaw,SWORN_TO
+House Drox,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Garner,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Strong of Harrenhal,SWORN_TO,House Tully of Riverrun,SWORN_TO
+House Uller of Hellholt,SWORN_TO,House Nymeros Martell of Sunspear,SWORN_TO
+House Toyne,SWORN_TO,House Baratheon of Storm's End,SWORN_TO
+House Qoherys of Harrenhal,SWORN_TO,House Tully of Riverrun,SWORN_TO
+House Ball,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Lake,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Vikary,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Massey of Stonedance,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Tawney of Orkmont,SWORN_TO,House Greyjoy of Pyke,SWORN_TO
+House Orme,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Hardyng,SWORN_TO,House Waynwood of Ironoaks,SWORN_TO
+House Flint of Breakstone Hill,SWORN_TO,House Stark of Winterfell,SWORN_TO
+House Hawthorne,SWORN_TO,House Lannister of Casterly Rock,SWORN_TO
+House Foote of Nightsong,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Donniger,SWORN_TO,House Arryn of the Eyrie,SWORN_TO
+House Willum,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Brune of Brownhollow,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Osgrey of Leafy Lake,SWORN_TO,House Osgrey of Standfast,SWORN_TO
+House Hunt,SWORN_TO,House Tarly of Horn Hill,SWORN_TO
+House Hutcheson,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Hayford of Hayford,SWORN_TO,House Baratheon of King's Landing,SWORN_TO
+House Shett of Gulltown,SWORN_TO,House Grafton of Gulltown,SWORN_TO
+House Redwyne of the Arbor,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Goodbrother of Downdelving,SWORN_TO,House Goodbrother of Hammerhorn,SWORN_TO
+House Kenning of Harlaw,SWORN_TO,House Harlaw of Harlaw,SWORN_TO
+House Vyrwel of Darkdell,SWORN_TO,House Tyrell of Highgarden,SWORN_TO
+House Wydman,SWORN_TO,House Arryn of the Eyrie,SWORN_TO
+House Lychester,SWORN_TO,House Baelish of Harrenhal,SWORN_TO
+House Ryswell of the Rills,SWORN_TO,House Bolton of the Dreadfort,SWORN_TO
+House Umber of the Last Hearth,SWORN_TO,House Stark of Winterfell,SWORN_TO
+House Massey of Stonedance,FOUNDED_BY,Maldon Massey,FOUNDED_BY
+House Nymeros Martell of Sunspear,FOUNDED_BY,Morgan Martell,FOUNDED_BY
+House Karstark of Karhold,FOUNDED_BY,Karlon Stark,FOUNDED_BY
+House Baelish of Harrenhal,FOUNDED_BY,Petyr Baelish,FOUNDED_BY
+House Yew,FOUNDED_BY,Alan,FOUNDED_BY
+House Corbray of Heart's Home,FOUNDED_BY,Corwyn Corbray,FOUNDED_BY
+House Blackfyre of King's Landing,FOUNDED_BY,Daemon Blackfyre,FOUNDED_BY
+House Foote of Nightsong,FOUNDED_BY,Philip Foote,FOUNDED_BY
+Daeron II,PARENT_OF,Maekar I,PARENT_OF
+Daemon Targaryen,PARENT_OF,Viserys II,PARENT_OF
+Qhorwyn Hoare,PARENT_OF,Harwyn Hoare,PARENT_OF
+Velaena Velaryon,PARENT_OF,Aegon I,PARENT_OF
+Aegon III,PARENT_OF,Daeron I,PARENT_OF
+Quellon Greyjoy,PARENT_OF,Balon Greyjoy,PARENT_OF
+Betha Blackwood,PARENT_OF,Jaehaerys II,PARENT_OF
+Robert I Baratheon,PARENT_OF,Tommen Baratheon,PARENT_OF
+Naerys Targaryen,PARENT_OF,Daeron II,PARENT_OF
+Alyssa Targaryen,PARENT_OF,Viserys I,PARENT_OF
+Aegon I,PARENT_OF,Aenys I,PARENT_OF
+Aegon V,PARENT_OF,Jaehaerys II,PARENT_OF
+Steffon Stackspear,HEIR_TO,House Stackspear,HEIR_TO
+Rollam Westerling,HEIR_TO,House Westerling of the Crag,HEIR_TO
+Alysane Mormont,HEIR_TO,House Mormont of Bear Island,HEIR_TO
+Eustace Hunter,HEIR_TO,House Hunter of Longbow Hall,HEIR_TO
+Myrcella Baratheon,HEIR_TO,House Baratheon of King's Landing,HEIR_TO
+Russell Merryweather,HEIR_TO,House Merryweather of Longtable,HEIR_TO
+Gulian Qorgyle,HEIR_TO,House Qorgyle of Sandstone,HEIR_TO
+Talbert Serry,HEIR_TO,House Serry of Southshield,HEIR_TO
+Flement Brax,HEIR_TO,House Brax of Hornvale,HEIR_TO
+Jynessa Blackmont,HEIR_TO,House Blackmont of Blackmont,HEIR_TO
+Edwyn Frey,HEIR_TO,House Frey of the Crossing,HEIR_TO
+House Arryn of Gulltown,BRANCH_OF,House Arryn of the Eyrie,BRANCH_OF
+House Lannister of Casterly Rock,BRANCH_OF,House Casterly of Casterly Rock,BRANCH_OF
+House Frey of Riverrun,BRANCH_OF,House Frey of the Crossing,BRANCH_OF
+House Farwynd of the Lonely Light,BRANCH_OF,House Farwynd of Sealskin Point,BRANCH_OF
+House Lantell,BRANCH_OF,House Lannister of Casterly Rock,BRANCH_OF
+House Goodbrother of Corpse Lake,BRANCH_OF,House Goodbrother of Hammerhorn,BRANCH_OF
+House Osgrey of Leafy Lake,BRANCH_OF,House Osgrey of Standfast,BRANCH_OF
+House Tyrell of Brightwater Keep,BRANCH_OF,House Tyrell of Highgarden,BRANCH_OF

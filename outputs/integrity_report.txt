@@ -1,0 +1,52 @@
+======================================================================
+  REPORTE DE INTEGRIDAD — Validación Cruzada Estratificada
+======================================================================
+Columna de estrato : Column2
+Folds (k)          : 5      Semilla: 42
+Filas de entrada   : 3,225
+  Duplicados elim. : 49
+Filas limpias      : 3,176
+Estratos           : 11
+Proporción train/test: 80/20
+
+RESULTADO GLOBAL: [PASS]
+  [OK] Sin solapamiento entre folds (overlap=0)
+  [OK] Cobertura total (cada fila en exactamente un fold)
+
+Tamaño de folds:
+  F1=640  F2=639  F3=635  F4=632  F5=630
+  Media=635.2  Std=3.8678  CV=0.6089%
+
+Distribución por estrato (recuento por fold, con Std y CV):
+| Estrato     | Total | F1  | F2  | F3  | F4  | F5  | Media | Std    | CV%    |
+|-------------|-------|-----|-----|-----|-----|-----|-------|--------|--------|
+| ALLIED_WITH | 1517  | 304 | 304 | 303 | 303 | 303 | 303.4 | 0.4899 | 0.1615 |
+| BRANCH_OF   | 42    | 9   | 9   | 8   | 8   | 8   | 8.4   | 0.4899 | 5.8321 |
+| FOUNDED_BY  | 43    | 9   | 9   | 9   | 8   | 8   | 8.6   | 0.4899 | 5.6965 |
+| HEIR_TO     | 59    | 12  | 12  | 12  | 12  | 11  | 11.8  | 0.4    | 3.3898 |
+| IN_REGION   | 437   | 88  | 88  | 87  | 87  | 87  | 87.4  | 0.4899 | 0.5605 |
+| LED_BY      | 179   | 36  | 36  | 36  | 36  | 35  | 35.8  | 0.4    | 1.1173 |
+| NaN         | 1     | 1   | 0   | 0   | 0   | 0   | 0.2   | 0.4    | 200.0  |
+| PARENT_OF   | 60    | 12  | 12  | 12  | 12  | 12  | 12.0  | 0.0    | 0.0    |
+| SEAT_OF     | 243   | 49  | 49  | 49  | 48  | 48  | 48.6  | 0.4899 | 1.008  |
+| SPOUSE      | 198   | 40  | 40  | 40  | 39  | 39  | 39.6  | 0.4899 | 1.2371 |
+| SWORN_TO    | 397   | 80  | 80  | 79  | 79  | 79  | 79.4  | 0.4899 | 0.617  |
+
+Entidades por fold (modo tripletas):
+  F1=739  F2=751  F3=758  F4=728  F5=728
+  Entidades compartidas entre pares (esperado en KGs):
+    Par 1-2: 280
+    Par 1-3: 274
+    Par 1-4: 259
+    Par 1-5: 261
+    Par 2-3: 293
+    Par 2-4: 270
+    Par 2-5: 261
+    Par 3-4: 281
+    Par 3-5: 274
+    Par 4-5: 271
+
+AVISOS:
+  [!] 1 fila(s) con estrato faltante (NaN) agrupadas en un estrato propio. Considere limpiarlas o usar dropna_stratum=True.
+  [!] Estratos con menos de k=5 ejemplos (no presentes en todos los folds): NaN.
+======================================================================
