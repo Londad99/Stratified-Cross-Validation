@@ -62,6 +62,7 @@ skfold-kge = "skfold_kge.cli:main"
 
 [project.urls]
 Repository = "https://github.com/Londad99/Stratified-Cross-Validation"
+PyPI = "https://pypi.org/project/skfold-kge/"
 
 [tool.setuptools.packages.find]
 include = ["skfold_kge*"]

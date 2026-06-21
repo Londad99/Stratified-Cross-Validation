@@ -4,6 +4,7 @@ Librería de validación cruzada k-fold estratificada para grafos de conocimient
 (KGE) y para clasificación de texto, con verificación de integridad de los
 folds y un reporte HTML autocontenido.
 
+[![PyPI](https://img.shields.io/pypi/v/skfold-kge)](https://pypi.org/project/skfold-kge/)
 [![python](https://img.shields.io/badge/python-%E2%89%A53.9-blue)](https://www.python.org/)
 [![tests](https://img.shields.io/badge/tests-pytest-green)](#testing)
 [![license](https://img.shields.io/badge/license-MIT-lightgrey)](#licencia)
@@ -53,16 +54,21 @@ Funciones principales:
 
 ## Instalación
 
-```bash
-# Núcleo: particionar, verificar, reportar, exportar. Dependencias: pandas, numpy, openpyxl.
-pip install -e .
+### Desde PyPI
 
-# Extras opcionales
-pip install -e ".[kge]"    # evaluación KGE: pykeen + torch (~2 GB)
-pip install -e ".[text]"   # clasificación de texto: scikit-learn
-pip install -e ".[liar]"   # loader del dataset LIAR (HuggingFace datasets)
-pip install -e ".[all]"    # todos los extras
-pip install -e ".[dev]"    # pytest
+La librería está publicada en PyPI: https://pypi.org/project/skfold-kge/
+
+```bash
+pip install skfold-kge
+```
+
+Extras opcionales (mismo patrón, agregando el nombre entre corchetes):
+
+```bash
+pip install "skfold-kge[kge]"    # evaluación KGE: pykeen + torch (~2 GB)
+pip install "skfold-kge[text]"   # clasificación de texto: scikit-learn
+pip install "skfold-kge[liar]"   # loader del dataset LIAR (HuggingFace datasets)
+pip install "skfold-kge[all]"    # todos los extras
 ```
 
 Nombre de distribución: `skfold-kge`. Nombre de import: `skfold_kge`.
@@ -73,6 +79,22 @@ Verificación de la instalación:
 python -c "import skfold_kge; print(skfold_kge.__version__)"
 skfold-kge --version
 ```
+
+### Desde el código fuente (desarrollo)
+
+Para modificar la librería en este repositorio y ver los cambios sin
+reinstalar, usar una instalación editable desde la raíz del proyecto (donde
+está `pyproject.toml`):
+
+```bash
+pip install -e ".[dev]"
+```
+
+Esto no copia el código a ningún lado: registra en el entorno de Python
+actual un enlace hacia esta carpeta. El comando debe ejecutarse dentro del
+mismo entorno (venv/conda) que luego se use para importar la librería, y la
+carpeta del repositorio debe seguir existiendo en su ruta original, porque el
+enlace apunta ahí y no a una copia.
 
 ---
 
@@ -172,11 +194,24 @@ barras de tamaño de fold, sin dependencias externas ni conexión a internet.
 
 ## Generación del entregable
 
+La librería es independiente del dataset: tanto el script como la CLI reciben
+la ruta del archivo y el nombre de la columna de estrato como argumentos. El
+ejemplo siguiente usa `datasets/GoT.csv` (el dataset del notebook original)
+únicamente porque viene incluido en el repositorio y permite reproducir la
+salida sin necesidad de traer datos propios. No es un valor fijo: para
+generar el entregable sobre cualquier otro dataset, basta con cambiar la ruta
+y el nombre de columna.
+
 ```bash
 python scripts/build_deliverable.py
 # equivalente vía CLI:
 python -m skfold_kge partition datasets/GoT.csv --by Column2 --k 5 --sep ";" \
     --out outputs --triple-names Subject Relation Object
+
+# sobre un dataset propio:
+python -m skfold_kge partition mi_dataset.csv --by mi_columna --k 5 --out outputs
+# o pasando --input al script:
+python scripts/build_deliverable.py --input mi_dataset.csv --by mi_columna
 ```
 
 Salida:
@@ -349,8 +384,9 @@ menos casos que folds y no puede repartirse en todos ellos. No es un error;
 indica un estrato minoritario que conviene revisar.
 
 `ImportError` al usar `cross_validate_kge` o `cross_validate_text`: faltan
-los extras opcionales correspondientes. Instalar con `pip install -e ".[kge]"`
-o `pip install -e ".[text]"`.
+los extras opcionales correspondientes. Instalar con `pip install "skfold-kge[kge]"`
+o `pip install "skfold-kge[text]"` (o, en instalación editable desde el
+repositorio, `pip install -e ".[kge]"` / `-e ".[text]"`).
 
 Tamaños de fold ligeramente distintos entre sí: es el comportamiento
 esperado cuando el total de un estrato no es múltiplo exacto de `k`; la
