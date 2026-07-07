@@ -67,7 +67,6 @@ Extras opcionales (mismo patrón, agregando el nombre entre corchetes):
 ```bash
 pip install "skfold-kge[kge]"    # evaluación KGE: pykeen + torch (~2 GB)
 pip install "skfold-kge[text]"   # clasificación de texto: scikit-learn
-pip install "skfold-kge[liar]"   # loader del dataset LIAR (HuggingFace datasets)
 pip install "skfold-kge[all]"    # todos los extras
 ```
 

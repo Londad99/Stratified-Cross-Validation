@@ -44,13 +44,9 @@ kge = [
 text = [
     "scikit-learn>=1.0",
 ]
-# Carga del dataset LIAR desde HuggingFace (solo para load_liar()).
-liar = [
-    "datasets>=2.0",
-]
 # Todo.
 all = [
-    "skfold-kge[kge,text,liar]",
+    "skfold-kge[kge,text]",
 ]
 # Desarrollo.
 dev = [

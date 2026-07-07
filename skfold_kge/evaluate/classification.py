@@ -1,13 +1,3 @@
-"""Clasificación de texto / detección de noticias falsas con F1 macro.
-
-Extra ``[text]``. Reutiliza el mismo :class:`StratifiedPartitioner` del núcleo
-(estratificando por la columna de clase) y entrena un clasificador TF-IDF +
-Regresión Logística por fold. El **F1 macro** es la métrica primaria porque no
-se infla con la clase mayoritaria en datasets desbalanceados.
-
-Incluye loaders para datasets públicos: ISOT, LIAR y WELFake.
-"""
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
@@ -43,26 +33,7 @@ def cross_validate_text(
     ngram_range: Tuple[int, int] = (1, 2),
     verbose: bool = True,
 ) -> Dict[str, object]:
-    """Validación cruzada estratificada para clasificación de texto.
 
-    Parameters
-    ----------
-    df : pandas.DataFrame
-        Debe contener ``text_col`` y ``label_col``.
-    text_col, label_col : str
-    k : int, default 5
-    seed : int, default 42
-    max_features : int
-        Máximo de features TF-IDF.
-    ngram_range : tuple
-        Rango de n-gramas para TF-IDF.
-
-    Returns
-    -------
-    dict
-        ``{"per_fold", "summary", "class_distribution", "k"}`` donde
-        ``summary`` trae media, Std y CV de F1/Precision/Recall/Accuracy.
-    """
     from ..partition import StratifiedPartitioner
 
     (
@@ -76,7 +47,7 @@ def cross_validate_text(
     if text_col not in df.columns or label_col not in df.columns:
         raise KeyError(f"Se requieren columnas {text_col!r} y {label_col!r}.")
 
-    # Mismo esquema estratificado del núcleo (sin deduplicar el texto).
+    
     foldset = StratifiedPartitioner(
         k=k, stratify_by=label_col, seed=seed, dedup=False
     ).fit_transform(df)
@@ -138,10 +109,7 @@ def cross_validate_text(
         "k": k,
     }
 
-
-# ====================================================================== #
 # Loaders de datasets públicos de noticias falsas
-# ====================================================================== #
 def load_isot(
     fake_path: str = "isot/Fake.csv", real_path: str = "isot/True.csv"
 ) -> pd.DataFrame:
@@ -162,25 +130,39 @@ def load_isot(
     return df[["text", "label"]].sample(frac=1, random_state=42).reset_index(drop=True)
 
 
-def load_liar() -> pd.DataFrame:
-    """Carga LIAR desde HuggingFace y binariza las 6 clases a fake(0)/real(1).
+_LIAR_URL = "https://www.cs.ucsb.edu/~william/data/liar_dataset.zip"
+_LIAR_FAKE_LABELS = {"pants-fire", "false", "barely-true"}
+_LIAR_REAL_LABELS = {"half-true", "mostly-true", "true"}
 
-    Requiere ``pip install skfold-kge[liar]``.
-    """
-    try:
-        from datasets import load_dataset
-    except ImportError as exc:  # pragma: no cover
-        raise ImportError(
-            "load_liar requiere 'datasets'. Instale con: pip install skfold-kge[liar]"
-        ) from exc
-    label_map = {0: 0, 1: 0, 2: 0, 3: 1, 4: 1, 5: 1}
-    ds = load_dataset("liar")
-    records = [
-        {"text": item["statement"], "label": label_map.get(item["label"], 0)}
-        for split in ("train", "validation", "test")
-        for item in ds[split]
-    ]
-    return pd.DataFrame(records)
+
+def load_liar(cache_dir: str = ".cache/liar") -> pd.DataFrame:
+    import os
+    import urllib.request
+    import zipfile
+
+    os.makedirs(cache_dir, exist_ok=True)
+    extract_dir = os.path.join(cache_dir, "liar_dataset")
+    train_tsv = os.path.join(extract_dir, "train.tsv")
+
+    if not os.path.exists(train_tsv):
+        zip_path = os.path.join(cache_dir, "liar_dataset.zip")
+        urllib.request.urlretrieve(_LIAR_URL, zip_path)
+        with zipfile.ZipFile(zip_path) as zf:
+            zf.extractall(extract_dir)
+
+    all_labels = _LIAR_FAKE_LABELS | _LIAR_REAL_LABELS
+    frames = []
+    for split in ("train.tsv", "valid.tsv", "test.tsv"):
+        part = pd.read_csv(
+            os.path.join(extract_dir, split), sep="\t", header=None, usecols=[1, 2]
+        )
+        part.columns = ["label", "statement"]
+        frames.append(part)
+    df = pd.concat(frames, ignore_index=True)
+    df = df[df["label"].isin(all_labels)].copy()
+    df["text"] = df["statement"].astype(str)
+    df["label"] = df["label"].map(lambda lbl: 0 if lbl in _LIAR_FAKE_LABELS else 1)
+    return df[["text", "label"]].sample(frac=1, random_state=42).reset_index(drop=True)
 
 
 def load_welfake(path: str = "WELFake_Dataset.csv") -> pd.DataFrame:
